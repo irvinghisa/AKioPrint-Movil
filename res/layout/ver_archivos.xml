@@ -1,0 +1,109 @@
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android1:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android1:orientation="vertical"
+    android1:visibility="visible" >
+
+            <LinearLayout
+                android1:layout_width="match_parent"
+                android1:layout_height="wrap_content" >
+
+                <Button
+                    android1:id="@+id/button1"
+                    style="?android:attr/buttonStyleSmall"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="0.07"
+                    android1:text="Eliminar seleccionados" />
+
+                <Button
+                    android1:id="@+id/button2"
+                    style="?android:attr/buttonStyleSmall"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="0.23"
+                    android1:text="Info." />
+
+                <Button
+                    android1:id="@+id/button3"
+                    style="?android:attr/buttonStyleSmall"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="0.04"
+                    android1:text="Subir Archivo" />
+
+            </LinearLayout>
+
+    <CheckBox
+        android1:id="@+id/a1"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_marginTop="29dp"
+        android1:visibility="visible" />
+
+     <CheckBox
+        android1:id="@+id/a2"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_marginTop="29dp"
+        android1:visibility="visible" />
+      <CheckBox
+        android1:id="@+id/a3"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_marginTop="29dp"
+        android1:visibility="visible" />
+       <CheckBox
+        android1:id="@+id/a4"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_marginTop="29dp"
+        android1:visibility="visible" />
+        <CheckBox
+        android1:id="@+id/a5"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_marginTop="29dp"
+        android1:visibility="visible" />
+         <CheckBox
+        android1:id="@+id/a6"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_marginTop="29dp"
+        android1:visibility="visible" />
+          <CheckBox
+        android1:id="@+id/a7"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_marginTop="29dp"
+        android1:visibility="visible" />
+           <CheckBox
+        android1:id="@+id/a8"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_marginTop="29dp"
+        android1:visibility="visible" />
+            <CheckBox
+        android1:id="@+id/a9"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_marginTop="29dp"
+        android1:visibility="visible" />
+
+             <CheckBox
+        android1:id="@+id/a10"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:layout_marginTop="29dp"
+        android1:visibility="visible" />
+</LinearLayout>  
+        
+    </ScrollView>
