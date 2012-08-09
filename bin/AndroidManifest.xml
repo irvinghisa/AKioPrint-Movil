@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name="ver_archivos"></activity>
+        <activity android:name="Menu"></activity>
     </application>
 
 </manifest>

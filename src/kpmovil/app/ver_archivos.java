@@ -142,12 +142,7 @@ String comodinStr="";
         			a6.setVisibility(View.VISIBLE);
         			a6.setText(e.getAttribute("data"));
         			
-        			/*if(nodesI.getLength()==6){
-        				Button eli=new Button(this);
-        				
-        				eli.setText("Eliminar");
-        				lay.addView(eli); 
-        			}*/
+        			
         		}
         		if(e.getNodeName().equals("Archivo7"))
         		{
@@ -189,7 +184,7 @@ String comodinStr="";
 			            String url="http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=nada en especial.docx";
 			            url=url.replace(" ","%20");
 			            
-			            Log.e("Tania", url+"Haber se supone que aqui esta la cadena");
+			          
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            
