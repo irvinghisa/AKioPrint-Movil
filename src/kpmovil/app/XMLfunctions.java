@@ -35,7 +35,9 @@ public class XMLfunctions {
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			
 			InputSource is = new InputSource();
+			is.setEncoding("UTF-8");
 	        is.setCharacterStream(new StringReader(xml));
+	        
 	        doc = db.parse(is); 
 	        
 		} catch (ParserConfigurationException e) {

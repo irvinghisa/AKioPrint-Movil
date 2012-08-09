@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
+import java.net.URLDecoder;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -44,12 +45,24 @@ private CheckBox a9;
 private CheckBox a10;
 private Button eli;
 String comodinStr="";
-    @Override
+String mat="";
+String con="";
+private Button btnSubir;
+private Button btnInfo;
+
+
+@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ver_archivos);
         
-      
+        mat=this.getIntent().getExtras().getString("mat");
+        con=this.getIntent().getExtras().getString("con");
+
+        eli=(Button) findViewById(R.id.btn_eliminar);
+        btnSubir=(Button) findViewById(R.id.btn_subir);
+        btnInfo=(Button) findViewById(R.id.btn_info);
+        
         
         a1=(CheckBox) findViewById(R.id.a1);
         a1.setVisibility(View.INVISIBLE);
@@ -81,11 +94,11 @@ String comodinStr="";
         a10=(CheckBox) findViewById(R.id.a10);
         a10.setVisibility(View.INVISIBLE);
 
-        eli=(Button) findViewById(R.id.btn_eliminar);
         
         
         
-        String xml = XMLfunctions.getXML("http://kp.utch.edu.mx/kmov.php?mat=1111250221&con=11223344");
+        
+        String xml = XMLfunctions.getXML("http://kp.utch.edu.mx/kmov.php?mat="+mat+"&con="+con+"");
         
         Document doc = XMLfunctions.XMLfromString(xml);
         
@@ -110,13 +123,18 @@ String comodinStr="";
         		Element e = (Element)nodesI.item(i);
         	
         		
-        		
+        		try {
+					
         		if(e.getNodeName().equals("Archivo1"))
         		{
         			//txt1.append( "Documento 1: " + e.getAttribute("data") + " \n");
         			a1.setVisibility(View.VISIBLE);
-        			a1.setText(e.getAttribute("data"));
+        			a1.setText(URLDecoder.decode(e.getAttribute("data"),"UTF-8"));
         		}
+
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
         		if(e.getNodeName().equals("Archivo2"))
         		{
         			a2.setVisibility(View.VISIBLE);
@@ -181,25 +199,210 @@ String comodinStr="";
 					 HttpClient client = new DefaultHttpClient();
 			            HttpGet request = new HttpGet();
 			            
-			            String url="http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=nada en especial.docx";
+			            String url="http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a1.getText().toString()+"";
 			            url=url.replace(" ","%20");
+			            Log.e("Tania", "http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a1.getText().toString()+"");
+			            request.setURI(new URI(url));
 			            
-			          
+			            HttpResponse response = client.execute(request);
+			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+				}catch(Exception e){
+			        Log.e("log_tag", "Error in http connection "+e.toString());
+			}
+		        	
+		        	
+		        }
+				if(a2.isChecked()){ 
+					Log.e("Tania", "si reconoce que esta seleccionado");
+				try{
+					//http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=prueba_ftp.docx
+					 //URL u = new URL("http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=nada en especial.docx");
+					 HttpClient client = new DefaultHttpClient();
+			            HttpGet request = new HttpGet();
+			            
+			            String url="http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a2.getText().toString()+"";
+			            url=url.replace(" ","%20");
+			            Log.e("Tania", "http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a2.getText().toString()+"");
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
-			            
-
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
-			}catch(Exception e){
+				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
 		        	
 		        	
 		        }
 				
+				if(a3.isChecked()){ 
+					Log.e("Tania", "si reconoce que esta seleccionado");
+				try{
+					//http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=prueba_ftp.docx
+					 //URL u = new URL("http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=nada en especial.docx");
+					 HttpClient client = new DefaultHttpClient();
+			            HttpGet request = new HttpGet();
+			            
+			            String url="http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a3.getText().toString()+"";
+			            url=url.replace(" ","%20");
+			            Log.e("Tania", "http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a3.getText().toString()+"");
+			            request.setURI(new URI(url));
+			            HttpResponse response = client.execute(request);
+			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+				}catch(Exception e){
+			        Log.e("log_tag", "Error in http connection "+e.toString());
+			}
+		        	
+		        	
+		        }
+				
+				if(a4.isChecked()){ 
+					Log.e("Tania", "si reconoce que esta seleccionado");
+				try{
+					//http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=prueba_ftp.docx
+					 //URL u = new URL("http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=nada en especial.docx");
+					 HttpClient client = new DefaultHttpClient();
+			            HttpGet request = new HttpGet();
+			            
+			            String url="http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a4.getText().toString()+"";
+			            url=url.replace(" ","%20");
+			            Log.e("Tania", "http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a4.getText().toString()+"");
+			            request.setURI(new URI(url));
+			            HttpResponse response = client.execute(request);
+			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+				}catch(Exception e){
+			        Log.e("log_tag", "Error in http connection "+e.toString());
+			}
+		        	
+		        	
+		        }
+				
+				if(a5.isChecked()){ 
+					Log.e("Tania", "si reconoce que esta seleccionado");
+				try{
+					//http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=prueba_ftp.docx
+					 //URL u = new URL("http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=nada en especial.docx");
+					 HttpClient client = new DefaultHttpClient();
+			            HttpGet request = new HttpGet();
+			            
+			            String url="http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a5.getText().toString()+"";
+			            url=url.replace(" ","%20");
+			            Log.e("Tania", "http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a5.getText().toString()+"");
+			            request.setURI(new URI(url));
+			            HttpResponse response = client.execute(request);
+			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+				}catch(Exception e){
+			        Log.e("log_tag", "Error in http connection "+e.toString());
+			}
+		        	
+		        	
+		        }
+				
+				if(a6.isChecked()){ 
+					Log.e("Tania", "si reconoce que esta seleccionado");
+				try{
+					//http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=prueba_ftp.docx
+					 //URL u = new URL("http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=nada en especial.docx");
+					 HttpClient client = new DefaultHttpClient();
+			            HttpGet request = new HttpGet();
+			            
+			            String url="http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a6.getText().toString()+"";
+			            url=url.replace(" ","%20");
+			            Log.e("Tania", "http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a6.getText().toString()+"");
+			            request.setURI(new URI(url));
+			            HttpResponse response = client.execute(request);
+			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+				}catch(Exception e){
+			        Log.e("log_tag", "Error in http connection "+e.toString());
+			}
+		        	
+		        	
+		        }
+				
+				if(a7.isChecked()){ 
+					Log.e("Tania", "si reconoce que esta seleccionado");
+				try{
+					//http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=prueba_ftp.docx
+					 //URL u = new URL("http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=nada en especial.docx");
+					 HttpClient client = new DefaultHttpClient();
+			            HttpGet request = new HttpGet();
+			            
+			            String url="http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a7.getText().toString()+"";
+			            url=url.replace(" ","%20");
+			            Log.e("Tania", "http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a7.getText().toString()+"");
+			            request.setURI(new URI(url));
+			            HttpResponse response = client.execute(request);
+			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+				}catch(Exception e){
+			        Log.e("log_tag", "Error in http connection "+e.toString());
+			}
+		        	
+		        	
+		        }
+				
+				if(a8.isChecked()){ 
+					Log.e("Tania", "si reconoce que esta seleccionado");
+				try{
+					//http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=prueba_ftp.docx
+					 //URL u = new URL("http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=nada en especial.docx");
+					 HttpClient client = new DefaultHttpClient();
+			            HttpGet request = new HttpGet();
+			            
+			            String url="http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a8.getText().toString()+"";
+			            url=url.replace(" ","%20");
+			            Log.e("Tania", "http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a8.getText().toString()+"");
+			            request.setURI(new URI(url));
+			            HttpResponse response = client.execute(request);
+			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+				}catch(Exception e){
+			        Log.e("log_tag", "Error in http connection "+e.toString());
+			}
+		        	
+		        	
+		        }
+				
+				if(a9.isChecked()){ 
+					Log.e("Tania", "si reconoce que esta seleccionado");
+				try{
+					//http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=prueba_ftp.docx
+					 //URL u = new URL("http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=nada en especial.docx");
+					 HttpClient client = new DefaultHttpClient();
+			            HttpGet request = new HttpGet();
+			            
+			            String url="http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a9.getText().toString()+"";
+			            url=url.replace(" ","%20");
+			            Log.e("Tania", "http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a9.getText().toString()+"");
+			            request.setURI(new URI(url));
+			            HttpResponse response = client.execute(request);
+			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+				}catch(Exception e){
+			        Log.e("log_tag", "Error in http connection "+e.toString());
+			}
+		        	
+		        	
+		        }
+				
+				if(a10.isChecked()){ 
+					Log.e("Tania", "si reconoce que esta seleccionado");
+				try{
+					//http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=prueba_ftp.docx
+					 //URL u = new URL("http://kp.utch.edu.mx/prueba_ftp.php?mat=1111250221&con=11223344&arch=nada en especial.docx");
+					 HttpClient client = new DefaultHttpClient();
+			            HttpGet request = new HttpGet();
+			            
+			            String url="http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a10.getText().toString()+"";
+			            url=url.replace(" ","%20");
+			            Log.e("Tania", "http://kp.utch.edu.mx/prueba_ftp.php?mat="+mat+"&con="+con+"&arch="+a10.getText().toString()+"");
+			            request.setURI(new URI(url));
+			            HttpResponse response = client.execute(request);
+			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+				}catch(Exception e){
+			        Log.e("log_tag", "Error in http connection "+e.toString());
+			}
+		        	
+		        	
+		        }
+				
+				
 			}
 		});
     }
-
-   
 }
