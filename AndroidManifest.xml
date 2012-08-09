@@ -23,6 +23,7 @@
         </activity>
         <activity android:name="ver_archivos"></activity>
         <activity android:name="Menu"></activity>
+        <activity android:name="info"></activity>
     </application>
 
 </manifest>

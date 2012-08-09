@@ -20,11 +20,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class IniciarSesion extends Activity {
 Button ver_archivos;
 private EditText mat;
 private EditText con;
+String str ="";
+private TextView mensaje; 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +35,7 @@ private EditText con;
         ver_archivos=(Button) findViewById(R.id.btnIniciar);
         mat=(EditText) findViewById(R.id.txtMat);
         con=(EditText) findViewById(R.id.txtCon);
-        
+       mensaje=(TextView) findViewById(R.id.mensaje);
         ver_archivos.setOnClickListener(new OnClickListener() {
 			
         	
@@ -62,17 +65,26 @@ private EditText con;
 	            Log.e("Tania", "Lo que trae lo que voy a solicitar"+url);
 	            request.setURI(new URI(url));
 	            HttpResponse response = client.execute(request);
-	            String str = inputStreamToString(response.getEntity().getContent()).toString();
+	            
+	            
+	           
+	            		str =inputStreamToString(response.getEntity().getContent()).toString();
 	            Log.e("Tania", "Imprimiendo lo que tiene response"+str);
 				
 				} catch (Exception e) {
 					Log.e("Tania", "Error al conectarse"+e.getMessage());
 				}
-	            
-	            Intent i = new Intent(IniciarSesion.this,ver_archivos.class);
-				i.putExtra("mat", "1111250221");
+	            if(str.equals("ok")){
+	            Intent i = new Intent(IniciarSesion.this,Menu.class);
+				i.putExtra("mat", mat.getText().toString());
+				i.putExtra("con", con.getText().toString());
+				mensaje.setText("");
 				startActivity(i);
-				
+	            }
+	            else{
+	            	mensaje.setText("Información incorrecta");
+	            	
+	            }
 			}
 		});
     }

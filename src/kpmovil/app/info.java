@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class Menu extends Activity {
+public class info extends Activity {
 Button btnVerA;
 Button btnSubirA;
 Button btnInfoU;
@@ -30,7 +30,7 @@ String con="";
         btnVerA.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
-				Intent i = new Intent(Menu.this,ver_archivos.class);
+				Intent i = new Intent(info.this,ver_archivos.class);
 				i.putExtra("mat", mat);
 				i.putExtra("con", con);
 				startActivity(i);
@@ -38,16 +38,21 @@ String con="";
 			}
 		});
         
-btnInfoU.setOnClickListener(new OnClickListener() {
+btnVerA.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
-				Intent i = new Intent(Menu.this,info.class);
+				Intent i = new Intent(info.this,info.class);
 				i.putExtra("mat", mat);
 				i.putExtra("con", con);
 				startActivity(i);
 				
-				
 			}
 		});
+
+
+        
+        
+       
+    
     }
 }
