@@ -15,25 +15,25 @@
             <LinearLayout
                 android1:layout_width="match_parent"
                 android1:layout_height="wrap_content" >
-
+
                 <Button
-                    android1:id="@+id/button1"
+                    android1:id="@+id/btn_eliminar"
                     style="?android:attr/buttonStyleSmall"
                     android1:layout_width="wrap_content"
                     android1:layout_height="wrap_content"
                     android1:layout_weight="0.07"
                     android1:text="Eliminar seleccionados" />
-
+
                 <Button
-                    android1:id="@+id/button2"
+                    android1:id="@+id/btn_info"
                     style="?android:attr/buttonStyleSmall"
                     android1:layout_width="wrap_content"
                     android1:layout_height="wrap_content"
                     android1:layout_weight="0.23"
                     android1:text="Info." />
-
+
                 <Button
-                    android1:id="@+id/button3"
+                    android1:id="@+id/btn_subir"
                     style="?android:attr/buttonStyleSmall"
                     android1:layout_width="wrap_content"
                     android1:layout_height="wrap_content"
