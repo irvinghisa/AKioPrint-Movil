@@ -22,6 +22,7 @@ import org.w3c.dom.NodeList;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -130,6 +131,7 @@ private Button btnInfo;
         			//txt1.append( "Documento 1: " + e.getAttribute("data") + " \n");
         			a1.setVisibility(View.VISIBLE);
         			a1.setText(URLDecoder.decode(e.getAttribute("data"),"UTF-8"));
+        			
         		}
 
 				} catch (Exception e2) {
@@ -186,6 +188,19 @@ private Button btnInfo;
         		
         	}
         }
+        
+        btnInfo.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				
+				Intent i = new Intent(ver_archivos.this,info.class);
+				i.putExtra("mat", mat);
+				i.putExtra("con", con);
+				startActivity(i);
+				
+			}
+		});
+        
         
         eli.setOnClickListener(new OnClickListener() {
 			
@@ -397,9 +412,13 @@ private Button btnInfo;
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
-		        	
-		        	
+		        		
 		        }
+				
+				Intent i = new Intent(ver_archivos.this,ver_archivos.class);
+				i.putExtra("mat", mat);
+				i.putExtra("con", con);
+				startActivity(i);
 				
 				
 			}
