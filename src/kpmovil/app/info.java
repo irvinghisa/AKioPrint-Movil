@@ -70,7 +70,7 @@ String urlImagen="";
 btnSubirA.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
-				Intent i = new Intent(info.this,SubirArchivos.class);
+				Intent i = new Intent(info.this, SubirArchivos.class);
 				i.putExtra("mat", mat);
 				i.putExtra("con", con);
 				startActivity(i);

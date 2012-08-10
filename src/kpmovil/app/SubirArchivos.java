@@ -1,6 +1,8 @@
 package kpmovil.app;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,12 +13,12 @@ import android.widget.TextView;
 
 public class SubirArchivos extends Activity {
 	
-	Button btnSel, btnSub;
-	TextView txtNomArch;
+	Button btnSel; 
+	public static Button btnSub;
+	public static TextView txtNomArch;
 	ListView lstdir;
 	String mat, con;
 	
-	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.subirarchivos);
@@ -24,8 +26,9 @@ public class SubirArchivos extends Activity {
         mat= getIntent().getExtras().getString("mat");
         con= getIntent().getExtras().getString("con");
         
+        
         txtNomArch= (TextView) findViewById(R.id.archivo);
-        txtNomArch.setText("Seleccionar Archivo");
+        txtNomArch.setText("Seleccionar Archivo ");
         
         lstdir= (ListView) findViewById(R.id.lstdir);
         
@@ -52,6 +55,33 @@ public class SubirArchivos extends Activity {
 			}
 		});
         
+btnSub.setOnClickListener(new OnClickListener() {
+			
+			
+			public void onClick(View arg0) {
+				subir sub= new subir();
+				sub.uploadFile(txtNomArch.getText().toString(), mat, con);
+				
+				alerts();
+				
+			}
+		});
+        
     }
+    
+    public void alerts(){
+		new AlertDialog.Builder(this)
+
+	       .setTitle("Archivo Subido")
+	       .setPositiveButton("OK", 
+
+	         new DialogInterface.OnClickListener() {
+	         
+	          
+	          public void onClick(DialogInterface dialog, int which) {
+
+	          }
+	          }).show();
+	}
 
 }

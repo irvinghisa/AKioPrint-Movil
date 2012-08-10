@@ -113,23 +113,28 @@ public class OtroFileBrowserActivity extends ListActivity  {
 
     	 String nomf= file.getAbsoluteFile().toString();
     	 
+    	 SubirArchivos.txtNomArch.setText(file.getAbsolutePath());
+    	 SubirArchivos.btnSub.setClickable(true);
+    	 
       new AlertDialog.Builder(this)
 
        .setTitle("[" + file.getName() + "]")
        .setPositiveButton("OK", 
 
+    		   
+       
          new DialogInterface.OnClickListener() {
          
           public void onClick(DialogInterface dialog, int which) {
 
           }
           }).show();
-      	
-      Intent i= new Intent(OtroFileBrowserActivity.this, SubirArchivos2.class);
+      	finish();
+     /*Intent i= new Intent(OtroFileBrowserActivity.this, SubirArchivos2.class);
  	 i.putExtra("arc", nomf);
  	 i.putExtra("mat", mat);
  	 i.putExtra("con", con);
-     startActivity(i);
+     startActivity(i);*/
      }
     }
     
