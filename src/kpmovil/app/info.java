@@ -67,10 +67,10 @@ String urlImagen="";
 			}
 		});
         
-btnVerA.setOnClickListener(new OnClickListener() {
+btnSubirA.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
-				Intent i = new Intent(info.this,ver_archivos.class);
+				Intent i = new Intent(info.this,SubirArchivos.class);
 				i.putExtra("mat", mat);
 				i.putExtra("con", con);
 				startActivity(i);

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/archivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Archivo"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/btnsel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="15dp"
+        android:layout_y="56dp"
+        android:text="Seleccionar Archivo" />
+
+    <Button
+        android:id="@+id/btnsubir"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_x="26dp"
+        android:layout_y="117dp"
+        android:text="Subir" />
+
+    <ListView
+        android:id="@+id/lstdir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="12dp"
+        android:layout_y="168dp" />
+
+</AbsoluteLayout>

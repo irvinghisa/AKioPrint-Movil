@@ -23,6 +23,8 @@
         <activity android:name="ver_archivos"></activity>
         <activity android:name="Menu"></activity>
         <activity android:name="info"></activity>
+        <activity android:name="SubirArchivos"></activity>
+        <activity android:name="OtroFileBrowserActivity"></activity>
     </application>
 
 </manifest>
