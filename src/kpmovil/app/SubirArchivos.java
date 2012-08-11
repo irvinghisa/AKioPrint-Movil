@@ -63,6 +63,7 @@ btnSub.setOnClickListener(new OnClickListener() {
 				sub.uploadFile(txtNomArch.getText().toString(), mat, con);
 				
 				alerts();
+				Ucambio.cambio="Se subió archivo: "+txtNomArch.getText().toString();
 				
 			}
 		});

@@ -37,7 +37,16 @@ String con="";
 				
 			}
 		});
-        
+btnSubirA.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				Intent i = new Intent(Menu.this,SubirArchivos.class);
+				i.putExtra("mat", mat);
+				i.putExtra("con", con);
+				startActivity(i);
+				
+			}
+		});
 btnInfoU.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {

@@ -80,6 +80,8 @@ private TextView mensaje;
 				i.putExtra("con", con.getText().toString());
 				mensaje.setText("");
 				startActivity(i);
+				
+				finish();
 	            }
 	            else{
 	            	mensaje.setText("Información incorrecta");

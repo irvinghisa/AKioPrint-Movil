@@ -17,6 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/prints" />
+
+        <TextView
+            android1:id="@+id/cambio"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android1:textAppearance="?android:attr/textAppearanceSmall" />
 
             <LinearLayout
                 android1:layout_width="match_parent"

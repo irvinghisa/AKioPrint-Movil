@@ -29,6 +29,7 @@ import android.view.View.OnClickListener;
 
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 
 
@@ -50,6 +51,7 @@ String mat="";
 String con="";
 private Button btnSubir;
 private Button btnInfo;
+public static TextView cambio;
 
 
 @Override
@@ -57,9 +59,12 @@ private Button btnInfo;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ver_archivos);
         
+        cambio=(TextView) findViewById(R.id.cambio);
         mat=this.getIntent().getExtras().getString("mat");
         con=this.getIntent().getExtras().getString("con");
 
+        cambio.setText(Ucambio.cambio);
+        
         eli=(Button) findViewById(R.id.btn_eliminar);
         btnSubir=(Button) findViewById(R.id.btn_subir);
         btnInfo=(Button) findViewById(R.id.btn_info);
@@ -201,7 +206,16 @@ private Button btnInfo;
 			}
 		});
         
-        
+        btnSubir.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				Intent i = new Intent(ver_archivos.this,SubirArchivos.class);
+				i.putExtra("mat", mat);
+				i.putExtra("con", con);
+				startActivity(i);
+				
+			}
+		});
         eli.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
@@ -221,6 +235,7 @@ private Button btnInfo;
 			            
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+			            Ucambio.cambio=("Último Cambio: "+a1.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -241,6 +256,7 @@ private Button btnInfo;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+			             Ucambio.cambio=("Último Cambio: "+a2.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -262,6 +278,7 @@ private Button btnInfo;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+			            Ucambio.cambio=("Último Cambio: "+a4.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -283,6 +300,7 @@ private Button btnInfo;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+			            Ucambio.cambio=("Último Cambio: "+a4.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -304,6 +322,7 @@ private Button btnInfo;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+			            Ucambio.cambio=("Último Cambio: "+a5.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -325,6 +344,7 @@ private Button btnInfo;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+			            Ucambio.cambio=("Último Cambio: "+a6.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -346,6 +366,7 @@ private Button btnInfo;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+			            Ucambio.cambio=("Último Cambio: "+a7.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -367,6 +388,7 @@ private Button btnInfo;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+			            Ucambio.cambio=("Último Cambio: "+a8.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -388,6 +410,7 @@ private Button btnInfo;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+			            Ucambio.cambio=("Último Cambio: "+a9.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -409,6 +432,7 @@ private Button btnInfo;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
+			            Ucambio.cambio=("Último Cambio: "+a10.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -418,10 +442,12 @@ private Button btnInfo;
 				Intent i = new Intent(ver_archivos.this,ver_archivos.class);
 				i.putExtra("mat", mat);
 				i.putExtra("con", con);
+				
 				startActivity(i);
 				
 				
 			}
 		});
+       
     }
 }
