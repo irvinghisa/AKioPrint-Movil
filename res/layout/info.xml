@@ -39,10 +39,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nombre: "
+             
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:id="@+id/matricula"
+             android:textColor="@color/Azul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Matrícula"
@@ -52,6 +54,7 @@
             android:id="@+id/saldo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+             android:textColor="@color/Azul"
             android:text="Saldo: "
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -60,6 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Total Archivos: "
+             android:textColor="@color/Rojo"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         

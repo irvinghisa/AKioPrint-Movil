@@ -1,0 +1,10 @@
+    <resources>
+
+    <color name="Negro">#000000</color>
+    <color name="Blanco">#FFFFFF</color>
+    <color name="Gris">#808080</color>
+    <color name="Amarillo">#FFFF00</color>
+    <color name="Azul">#0000FF</color>
+    <color name="Rojo">#FF0000</color>
+    <color name="Verde">#00FF00</color>
+</resources>

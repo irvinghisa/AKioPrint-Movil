@@ -235,7 +235,7 @@ public static TextView cambio;
 			            
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
-			            Ucambio.cambio=("Último Cambio: "+a1.getText());
+			            Ucambio.cambio=("Se eliminó: "+a1.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -256,7 +256,7 @@ public static TextView cambio;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
-			             Ucambio.cambio=("Último Cambio: "+a2.getText());
+			             Ucambio.cambio=("Se eliminó: "+a2.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -278,7 +278,7 @@ public static TextView cambio;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
-			            Ucambio.cambio=("Último Cambio: "+a4.getText());
+			            Ucambio.cambio=("Se eliminó: "+a4.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -300,7 +300,7 @@ public static TextView cambio;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
-			            Ucambio.cambio=("Último Cambio: "+a4.getText());
+			            Ucambio.cambio=("Se eliminó: "+a4.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -322,7 +322,7 @@ public static TextView cambio;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
-			            Ucambio.cambio=("Último Cambio: "+a5.getText());
+			            Ucambio.cambio=("Se eliminó: "+a5.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -344,7 +344,7 @@ public static TextView cambio;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
-			            Ucambio.cambio=("Último Cambio: "+a6.getText());
+			            Ucambio.cambio=("Se eliminó: "+a6.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -366,7 +366,7 @@ public static TextView cambio;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
-			            Ucambio.cambio=("Último Cambio: "+a7.getText());
+			            Ucambio.cambio=("Se eliminó: "+a7.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -388,7 +388,7 @@ public static TextView cambio;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
-			            Ucambio.cambio=("Último Cambio: "+a8.getText());
+			            Ucambio.cambio=("Se eliminó: "+a8.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -410,7 +410,7 @@ public static TextView cambio;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
-			            Ucambio.cambio=("Último Cambio: "+a9.getText());
+			            Ucambio.cambio=("Se eliminó: "+a9.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
@@ -432,7 +432,7 @@ public static TextView cambio;
 			            request.setURI(new URI(url));
 			            HttpResponse response = client.execute(request);
 			            Log.e("Tania", "Se terminó la ejecucion de eliminado");
-			            Ucambio.cambio=("Último Cambio: "+a10.getText());
+			            Ucambio.cambio=("Se eliminó: "+a10.getText());
 				}catch(Exception e){
 			        Log.e("log_tag", "Error in http connection "+e.toString());
 			}
