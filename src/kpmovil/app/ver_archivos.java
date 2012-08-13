@@ -443,8 +443,9 @@ public static TextView cambio;
 				i.putExtra("mat", mat);
 				i.putExtra("con", con);
 				
-				startActivity(i);
+				finish();
 				
+				startActivity(i);
 				
 			}
 		});

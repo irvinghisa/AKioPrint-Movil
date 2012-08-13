@@ -1,37 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/fondo"
+	    android:orientation="vertical" >
+	    
+
+
+
+
+
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/prints" />
 
     <TextView
         android:id="@+id/archivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_x="15dp"
+        android:layout_y="137dp"
         android:text="Archivo"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
+
     <Button
         android:id="@+id/btnsel"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="15dp"
-        android:layout_y="56dp"
+        android:layout_height="34dp"
+        android:layout_x="8dp"
+        android:layout_y="174dp"
         android:text="Seleccionar Archivo" />
-
+
     <Button
         android:id="@+id/btnsubir"
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="88dp"
+        android:layout_width="93dp"
         android:layout_height="wrap_content"
-        android:layout_x="26dp"
-        android:layout_y="117dp"
+        android:layout_x="14dp"
+        android:layout_y="215dp"
         android:text="Subir" />
 
-    <ListView
-        android:id="@+id/lstdir"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="294dp"
         android:layout_height="wrap_content"
-        android:layout_x="12dp"
-        android:layout_y="168dp" />
+        android:layout_x="11dp"
+        android:layout_y="90dp"
+        android:text="Selecciona tu archivo de Word (docx, doc) o PDF"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
 </AbsoluteLayout>

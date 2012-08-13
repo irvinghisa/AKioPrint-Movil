@@ -26,11 +26,8 @@ public class SubirArchivos extends Activity {
         mat= getIntent().getExtras().getString("mat");
         con= getIntent().getExtras().getString("con");
         
-        
         txtNomArch= (TextView) findViewById(R.id.archivo);
         txtNomArch.setText("Seleccionar Archivo ");
-        
-        lstdir= (ListView) findViewById(R.id.lstdir);
         
         btnSel= (Button) findViewById(R.id.btnsel);
         btnSub= (Button) findViewById(R.id.btnsubir);
