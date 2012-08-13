@@ -120,7 +120,17 @@ public class OtroFileBrowserActivity extends ListActivity  {
     	 	finish();
     	 	
     	 }else{
-    		 
+    		 new AlertDialog.Builder(this)
+       	  .setTitle("El archivo no es valido")
+       	  .setPositiveButton("OK", 
+
+       	  new DialogInterface.OnClickListener() {
+            
+       		  public void onClick(DialogInterface dialog, int which) {
+
+
+       		  }
+       	  	}).show();
     	 }
      }
     }
